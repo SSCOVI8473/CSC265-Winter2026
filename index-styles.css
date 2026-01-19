@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+/*
+Author: Steven Scoville
+Date:   01/18/2026
+*/
+
+.site-header {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    background: #fff;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.site-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    flex: 1 1 calc(50% - 24px);
+    box-sizing: border-box;
+}
+
+.about-photo {
+  float: right;
+  max-width: 140px;
+  margin: 0 0 10px 15px;
+  border-radius: 8px;
+}
+
+.card ul {
+    padding-left: 20px;
+    margin: 8px 0 0;
+}
+
+.card li {
+    margin-bottom: 6px;
+}
+
+.card-title {
+    font-variant: small-caps;
+}
+
+.skills-group h3 {
+    font-variant: small-caps;
+}
+
+.site-footer {
+    text-align: center;
+}
+
+.contact-list strong {
+    font-variant: small-caps;
+}
