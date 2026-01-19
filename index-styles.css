@@ -27,11 +27,10 @@ Date:   01/18/2026
 }
 
 .site-body {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 24px;
     padding: 24px;
-    width: 100%;
 }
 
 .card {
@@ -39,10 +38,8 @@ Date:   01/18/2026
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    flex-basis: 50%;
-    height: 100%;
+    flex: 1 1 calc(50% - 24px);
+    box-sizing: border-box;
 }
 
 .about-photo {
@@ -71,4 +68,8 @@ Date:   01/18/2026
 
 .site-footer {
     text-align: center;
+}
+
+.contact-list strong {
+    font-variant: small-caps;
 }
