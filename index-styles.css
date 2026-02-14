@@ -260,3 +260,81 @@ h3 { font-size: 1.05rem; margin: 0.75rem 0 0.35rem; }
 .theme-dark .about-photo {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.theme-dark .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-dark .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+}
+
+/* Dark Theme Form Controls */
+.theme-dark .form-row input,
+.theme-dark input,
+.theme-dark textarea {
+  background-color: #1b2230;
+  color: #e9eef5;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+}
+
+.theme-dark input::placeholder {
+  color: #9aa7bd;
+}
+
+.theme-dark .form-row input:focus,
+.theme-dark input:focus,
+.theme-dark textarea:focus {
+  outline: none;
+  border-color: #7db7ff;
+  box-shadow: 0 0 0 2px rgba(125, 183, 255, 0.25);
+}
+
+/* Buttons */
+.theme-dark .btn {
+  background-color: #7db7ff;
+  color: #0f1115;
+  border: none;
+  font-weight: 500;
+}
+
+.theme-dark .btn:hover {
+  background-color: #a8d0ff;
+  color: #0f1115;
+}
+
+/* Clear button */
+.theme-dark .btn-secondary {
+  background-color: #2a3245;
+  color: #e9eef5;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.theme-dark .btn-secondary:hover {
+  background-color: #36405a;
+}
+
+.theme-dark .task-item {
+  background-color: #1b2230;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e9eef5;
+}
+
+.theme-dark .task-item:hover {
+  background-color: #2a3245;
+  border-color: rgba(125, 183, 255, 0.35);
+}
+
+.theme-dark .task-empty {
+  color: #9aa7bd;
+}
+
+.theme-dark .task-list {
+  margin-top: 8px;
+}
