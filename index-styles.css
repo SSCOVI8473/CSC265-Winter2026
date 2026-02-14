@@ -5,6 +5,36 @@ Author: Steven Scoville
 Date:   01/18/2026
 */
 
+/* --- Typography styles to override Bootstrap defaults --- */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.45;
+}
+
+h1 { font-size: 1.6rem; margin: 0; }
+h2 { font-size: 1.25rem; margin: 0 0 0.5rem; }
+h3 { font-size: 1.05rem; margin: 0.75rem 0 0.35rem; }
+
+.card p,
+.card li {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.card li {
+  margin: 0.25rem 0;
+}
+
+
 .site-header {
     position: sticky;
     top: 0px;
@@ -24,13 +54,6 @@ Date:   01/18/2026
     gap: 12px;
     justify-content: center;
     padding-top: 10px;
-}
-
-.site-body {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    padding: 24px;
 }
 
 .card {
@@ -166,4 +189,152 @@ Date:   01/18/2026
   .js-page .card {
     flex: 1 1 100%;
   }
+}
+
+
+/* Theme Coloring */
+
+.theme-dark {
+  background: #0f1115;
+  color: #e9eef5;
+}
+
+.theme-dark .site-header,
+.theme-dark .site-footer {
+  background: #0b0d10;
+  color: #e9eef5;
+}
+
+.theme-dark .site-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.theme-dark .site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Cards become dark panels */
+.theme-dark .card {
+  background: #151922;
+  color: #e9eef5;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Muted text inside cards */
+.theme-dark .card p,
+.theme-dark .card li {
+  color: #d7deea;
+}
+
+/* Accent color for headings + links */
+.theme-dark .card-title,
+.theme-dark .skills-group h3 {
+  color: #7db7ff;
+}
+
+.theme-dark a {
+  color: #7db7ff;
+  text-decoration: none;
+}
+
+.theme-dark a:hover {
+  color: #a8d0ff;
+  text-decoration: underline;
+}
+
+/* Nav styling */
+.theme-dark .site-nav a {
+  color: #d7deea;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.theme-dark .site-nav a:hover {
+  color: #0f1115;
+  background: #7db7ff;
+  text-decoration: none;
+}
+
+/* About photo still looks good on dark */
+.theme-dark .about-photo {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.theme-dark .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-dark .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+}
+
+/* Dark Theme Form Controls */
+.theme-dark .form-row input,
+.theme-dark input,
+.theme-dark textarea {
+  background-color: #1b2230;
+  color: #e9eef5;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+}
+
+.theme-dark input::placeholder {
+  color: #9aa7bd;
+}
+
+.theme-dark .form-row input:focus,
+.theme-dark input:focus,
+.theme-dark textarea:focus {
+  outline: none;
+  border-color: #7db7ff;
+  box-shadow: 0 0 0 2px rgba(125, 183, 255, 0.25);
+}
+
+/* Buttons */
+.theme-dark .btn {
+  background-color: #7db7ff;
+  color: #0f1115;
+  border: none;
+  font-weight: 500;
+}
+
+.theme-dark .btn:hover {
+  background-color: #a8d0ff;
+  color: #0f1115;
+}
+
+/* Clear button */
+.theme-dark .btn-secondary {
+  background-color: #2a3245;
+  color: #e9eef5;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.theme-dark .btn-secondary:hover {
+  background-color: #36405a;
+}
+
+.theme-dark .task-item {
+  background-color: #1b2230;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e9eef5;
+}
+
+.theme-dark .task-item:hover {
+  background-color: #2a3245;
+  border-color: rgba(125, 183, 255, 0.35);
+}
+
+.theme-dark .task-empty {
+  color: #9aa7bd;
+}
+
+.theme-dark .task-list {
+  margin-top: 8px;
 }
