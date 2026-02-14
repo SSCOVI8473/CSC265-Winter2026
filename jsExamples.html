@@ -49,71 +49,89 @@
             </nav>
         </header>
 
-        <main class="site-body js-page">
-            <section class="card">
-            <h2 class="card-title">JavaScript Examples</h2>
-            <p>
-                This page includes small JavaScript demos that highlight DOM manipulation,
-                events, timers, and basic data handling. Each example is interactive and
-                written in plain JavaScript.
-            </p>
-            </section>
+        <main class="container my-4 js-page">
+            
+            <div class="row g-4 justify-content-center">
 
-            <!-- Example 1: Tip Calculator -->
-            <section class="card example-card" id="example-tip">
-            <h2 class="card-title">Example 1: Tip Calculator</h2>
-            <p>Enter a bill amount and tip percent to calculate tip and total.</p>
+                <div class="col-12 col-md-6">
+                    <section class="card h-100">
+                        <h2 class="card-title">JavaScript Examples</h2>
+                        
+                        <p>
+                            This page includes small JavaScript demos that highlight DOM manipulation,
+                            events, timers, and basic data handling. Each example is interactive and
+                            written in plain JavaScript.
+                        </p>
+                    </section>
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <!-- Example 1: Tip Calculator -->
+                    <section class="card h-100 example-card" id="example-tip">
+                        <h2 class="card-title">Example 1: Tip Calculator</h2>
+                    
+                        <p>Enter a bill amount and tip percent to calculate tip and total.</p>
+                    
+                        <div class="form-row">
+                            <label for="billAmount">Bill ($)</label>
+                            <input type="number" id="billAmount" min="0" step="0.01" placeholder="25.00">
+                        </div>
+                    
+                        <div class="form-row">
+                            <label for="tipPercent">Tip (%)</label>
+                            <input type="number" id="tipPercent" min="0" step="1" placeholder="20">
+                        </div>
+                    
+                        <button type="button" class="btn" id="calcTipBtn">Calculate</button>
+                    
+                        <p class="result-line">
+                            Tip: <strong id="tipOutput">$0.00</strong>
+                        </p>
+                    
+                        <p class="result-line">
+                            Total: <strong id="totalOutput">$0.00</strong>
+                        </p>
+                    </section>
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <!-- Example 2: Mini Task List (localStorage) -->
+                    <section class="card h-100 example-card" id="example-tasks">
+                        <h2 class="card-title">Example 2: Mini Task List (Saves)</h2>
+                    
+                        <p>Add tasks, then click a task to remove it. This demo saves to localStorage.</p>
+                    
+                        <div class="form-row">
+                            <label for="taskInput">New task</label>
+                            <input type="text" id="taskInput" maxlength="60" placeholder="e.g., Finish Assignment 4.3">
+                        </div>
+                    
+                        <button type="button" class="btn" id="addTaskBtn">Add Task</button>
+                    
+                        <ul class="task-list" id="taskList"></ul>
+                    
+                        <button type="button" class="btn btn-secondary" id="clearTasksBtn">Clear All</button>
+                    </section>
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <!-- Example 3: Click-to-Move Heart (timer animation) -->
+                    <section class="card h-100 example-card" id="example-heart">
+                        <h2 class="card-title">Example 3: Click-to-Move (Timer Animation)</h2>
+                        
+                        <p>Click anywhere inside the box to animate the heart to that location.</p>
+                        
+                        <div class="play-area" id="playArea">
+                            <div class="heart" id="heart" aria-hidden="true">♥</div>
+                        </div>
+                        
+                        <p class="small-note">
+                            Concepts: click events, coordinates, setInterval/clearInterval, DOM styling.
+                        </p>
+                    </section>
+                </div>
 
-            <div class="form-row">
-                <label for="billAmount">Bill ($)</label>
-                <input type="number" id="billAmount" min="0" step="0.01" placeholder="25.00">
             </div>
-
-            <div class="form-row">
-                <label for="tipPercent">Tip (%)</label>
-                <input type="number" id="tipPercent" min="0" step="1" placeholder="20">
-            </div>
-
-            <button type="button" class="btn" id="calcTipBtn">Calculate</button>
-
-            <p class="result-line">
-                Tip: <strong id="tipOutput">$0.00</strong>
-            </p>
-            <p class="result-line">
-                Total: <strong id="totalOutput">$0.00</strong>
-            </p>
-            </section>
-
-            <!-- Example 2: Mini Task List (localStorage) -->
-            <section class="card example-card" id="example-tasks">
-            <h2 class="card-title">Example 2: Mini Task List (Saves)</h2>
-            <p>Add tasks, then click a task to remove it. This demo saves to localStorage.</p>
-
-            <div class="form-row">
-                <label for="taskInput">New task</label>
-                <input type="text" id="taskInput" maxlength="60" placeholder="e.g., Finish Assignment 4.3">
-            </div>
-
-            <button type="button" class="btn" id="addTaskBtn">Add Task</button>
-
-            <ul class="task-list" id="taskList"></ul>
-
-            <button type="button" class="btn btn-secondary" id="clearTasksBtn">Clear All</button>
-            </section>
-
-            <!-- Example 3: Click-to-Move Heart (timer animation) -->
-            <section class="card example-card" id="example-heart">
-            <h2 class="card-title">Example 3: Click-to-Move (Timer Animation)</h2>
-            <p>Click anywhere inside the box to animate the heart to that location.</p>
-
-            <div class="play-area" id="playArea">
-                <div class="heart" id="heart" aria-hidden="true">♥</div>
-            </div>
-
-            <p class="small-note">
-                Concepts: click events, coordinates, setInterval/clearInterval, DOM styling.
-            </p>
-            </section>
         </main>
 
         <footer class="site-footer">
