@@ -190,3 +190,73 @@ h3 { font-size: 1.05rem; margin: 0.75rem 0 0.35rem; }
     flex: 1 1 100%;
   }
 }
+
+
+/* Theme Coloring */
+
+.theme-dark {
+  background: #0f1115;
+  color: #e9eef5;
+}
+
+.theme-dark .site-header,
+.theme-dark .site-footer {
+  background: #0b0d10;
+  color: #e9eef5;
+}
+
+.theme-dark .site-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.theme-dark .site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Cards become dark panels */
+.theme-dark .card {
+  background: #151922;
+  color: #e9eef5;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Muted text inside cards */
+.theme-dark .card p,
+.theme-dark .card li {
+  color: #d7deea;
+}
+
+/* Accent color for headings + links */
+.theme-dark .card-title,
+.theme-dark .skills-group h3 {
+  color: #7db7ff;
+}
+
+.theme-dark a {
+  color: #7db7ff;
+  text-decoration: none;
+}
+
+.theme-dark a:hover {
+  color: #a8d0ff;
+  text-decoration: underline;
+}
+
+/* Nav styling */
+.theme-dark .site-nav a {
+  color: #d7deea;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.theme-dark .site-nav a:hover {
+  color: #0f1115;
+  background: #7db7ff;
+  text-decoration: none;
+}
+
+/* About photo still looks good on dark */
+.theme-dark .about-photo {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
