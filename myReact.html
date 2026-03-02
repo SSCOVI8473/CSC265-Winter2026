@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+        Author: Steven Scoville
+        Date:   03/01/2026
+        -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Steven Scoville - React Demo</title>
+
+        <!--Bootstrap CSS-->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+
+        <!--Custom Styles-->
+        <link rel="stylesheet" href="index-styles.css" />
+
+    
+    </head>
+
+    <body class="theme-dark">
+        <header class="site-header">
+            <div class="header-top">
+                <div class="header-left">
+                    <h1 class="site-course">CSC265 - Intermediate Website Design</h1>
+                    <h2 class="site-degree">Bachelor of Science in Information Technology</h2>
+                </div>
+
+                <div class="header-right">
+                    <h1 class="site-name">Steven Scoville</h1>
+                    <h2 class="site-tagline">Aspiring Software Engineer</h2>
+                </div>
+            </div>
+
+            <nav class="site-nav" aria-label="Primary navigation">
+                <a href="index.html#about">About</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="jsExamples.html">JS Examples</a>
+                <a href="myReact.html">React Demo</a>
+            </nav>
+        </header>
+
+        <main class="container my-4">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                    <section>
+                        <h2 class="card-title">React Demo</h2>
+                        <p class="placeholder-text">
+                            This page renders a React component as part of my portfolio site.
+                        </p>
+
+                        <div id="root" class="mt-3"></div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 Steven Scoville. All rights reserved.</p>
+            <p>Built with HTML, CSS, and JavaScript for CSC265 - Intermediate Website Design.</p>
+        </footer>
+
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script type="text/babel">
+            function SkillBadges({ skills }) {
+                return (
+                    <div className="d-flex flex-wrap gap-2">
+                        {skills.map((skill) => (
+                        <span key={skill} className="badge rounded-pill bg-secondary">
+                            {skill}
+                        </span>
+                        ))}
+                    </div>
+                );
+            }
+
+            function ProjectCard({ title, desc, skills, repoUrl }) {
+                return (
+                    <div className="card">
+                        <div className="p-3">
+                        <h3 className="h5 mb-2">{title}</h3>
+                        <p className="placeholder-text mb-3">{desc}</p>
+
+                        <SkillBadges skills={skills} />
+
+                        <div className="mt-3">
+                            <a
+                                className="btn btn-outline-light btn-sm"
+                                href={repoUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Repo
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                );
+            }
+
+            function App() {
+                const projects = [
+                {
+                    title: "UtilitySuite",
+                    desc: "Modular C# console app with menus, centralized input validation, and JSON persistence.",
+                    skills: ["C#", ".NET", "OOP", "JSON"],
+                    repoUrl: "https://github.com/s-scoville/UtilitySuite",
+                },
+                {
+                    title: "Developer Daily Hub",
+                    desc: "Backend-focused project concept using APIs and Swagger (planned expansion).",
+                    skills: ["ASP.NET Core", "APIs", "Swagger"],
+                    repoUrl: "https://github.com/s-scoville/developer-daily-hub",
+                },
+                ];
+
+                return (
+                    <div className="row g-3">
+                        <div className="col-12">
+                        <p className="placeholder-text mb-3">
+                            Below is a small React component that renders project cards using reusable components and props.
+                        </p>
+                        </div>
+
+                        {projects.map((p) => (
+                        <div key={p.title} className="col-12 col-md-6">
+                            <ProjectCard {...p} />
+                        </div>
+                        ))}
+                    </div>
+                );
+            }
+
+            const rootEl = document.getElementById("root");
+
+            if (ReactDOM.createRoot) {
+                const root = ReactDOM.createRoot(rootEl);
+                root.render(<App />);
+            } else {
+                ReactDOM.render(<App />, rootEl);
+            }
+        </script>
+
+    </body>
+</html>
