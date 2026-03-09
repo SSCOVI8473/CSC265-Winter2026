@@ -5,19 +5,86 @@ Author: Steven Scoville
 Date:   01/18/2026
 */
 
-/* --- Typography styles to override Bootstrap defaults --- */
+/* =========================================================
+   Base / Typography
+   ========================================================= */
+
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.45;
+  margin: 0;
 }
 
-h1 { font-size: 1.6rem; margin: 0; }
-h2 { font-size: 1.25rem; margin: 0 0 0.5rem; }
-h3 { font-size: 1.05rem; margin: 0.75rem 0 0.35rem; }
+h1 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 0.75rem 0 0.35rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =========================================================
+   Layout
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 1rem 1.25rem 0.5rem;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 1.25rem 1rem;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  flex: 1 1 calc(50% - 24px);
+  aspect-ratio: 3 / 5;
+  max-width: 420px;
+  box-sizing: border-box;
+}
 
 .card p,
 .card li {
@@ -34,37 +101,16 @@ h3 { font-size: 1.05rem; margin: 0.75rem 0 0.35rem; }
   margin: 0.25rem 0;
 }
 
-
-.site-header {
-    position: sticky;
-    top: 0px;
-    z-index: 1000;
-    background: #fff;
+.card-title {
+  font-variant: small-caps;
 }
 
-.header-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
+.skills-group h3 {
+  font-variant: small-caps;
 }
 
-.site-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    padding-top: 10px;
-}
-
-.card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    flex: 1 1 calc(50% - 24px);
-    aspect-ratio: 3 / 5;
-    max-width: 420px;
-    box-sizing: border-box;
+.contact-list strong {
+  font-variant: small-caps;
 }
 
 .about-photo {
@@ -72,37 +118,66 @@ h3 { font-size: 1.05rem; margin: 0.75rem 0 0.35rem; }
   max-width: 140px;
   margin: 0 0 10px 15px;
   border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.card ul {
-    padding-left: 20px;
-    margin: 8px 0 0;
+#about,
+#projects,
+#skills,
+#contact {
+  scroll-margin-top: 150px;
 }
 
-.card li {
-    margin-bottom: 6px;
+/* =========================================================
+   Assignment 9.3 UI Elements
+   ========================================================= */
+
+.theme-toggle-btn {
+  margin-top: 0.75rem;
+  padding: 0.55rem 0.95rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.card-title {
-    font-variant: small-caps;
+.theme-toggle-btn:hover {
+  transform: translateY(-1px);
 }
 
-.skills-group h3 {
-    font-variant: small-caps;
+.back-to-top-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: none;
+  padding: 0.65rem 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  z-index: 1100;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.site-footer {
-    text-align: center;
+.back-to-top-btn:hover {
+  transform: translateY(-1px);
 }
 
-.contact-list strong {
-    font-variant: small-caps;
+.site-nav .nav-link {
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+.site-nav .nav-link.active {
+  font-weight: 600;
+}
 
+/* =========================================================
+   JS Examples Page
+   ========================================================= */
 
-
-/* ---------- JS Examples Page ---------- */
 .js-page .card {
   flex: 1 1 calc(50% - 12px);
 }
@@ -134,7 +209,7 @@ h3 { font-size: 1.05rem; margin: 0.75rem 0 0.35rem; }
 }
 
 .btn-secondary {
-  background: #fff;
+  background: #ffffff;
 }
 
 .result-line {
@@ -184,15 +259,9 @@ h3 { font-size: 1.05rem; margin: 0.75rem 0 0.35rem; }
   color: #555;
 }
 
-/* Mobile: make JS cards full width */
-@media (max-width: 800px) {
-  .js-page .card {
-    flex: 1 1 100%;
-  }
-}
-
-
-/* Theme Coloring */
+/* =========================================================
+   Dark Theme
+   ========================================================= */
 
 .theme-dark {
   background: #0f1115;
@@ -213,59 +282,11 @@ h3 { font-size: 1.05rem; margin: 0.75rem 0 0.35rem; }
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Cards become dark panels */
 .theme-dark .card {
   background: #151922;
   color: #e9eef5;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Muted text inside cards */
-.theme-dark .card p,
-.theme-dark .card li {
-  color: #d7deea;
-}
-
-/* Accent color for headings + links */
-.theme-dark .card-title,
-.theme-dark .skills-group h3 {
-  color: #7db7ff;
-}
-
-.theme-dark a {
-  color: #7db7ff;
-  text-decoration: none;
-}
-
-.theme-dark a:hover {
-  color: #a8d0ff;
-  text-decoration: underline;
-}
-
-/* Nav styling */
-.theme-dark .site-nav a {
-  color: #d7deea;
-  padding: 6px 10px;
-  border-radius: 8px;
-}
-
-.theme-dark .site-nav a:hover {
-  color: #0f1115;
-  background: #7db7ff;
-  text-decoration: none;
-}
-
-/* About photo still looks good on dark */
-.theme-dark .about-photo {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.theme-dark .card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -274,7 +295,47 @@ html {
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
 }
 
-/* Dark Theme Form Controls */
+.theme-dark .card p,
+.theme-dark .card li {
+  color: #d7deea;
+}
+
+.theme-dark .card-title,
+.theme-dark .skills-group h3 {
+  color: #7db7ff;
+}
+
+.theme-dark a {
+  color: #7db7ff;
+}
+
+.theme-dark a:hover {
+  color: #a8d0ff;
+  text-decoration: underline;
+}
+
+.theme-dark .site-nav .nav-link {
+  color: #d7deea;
+}
+
+.theme-dark .site-nav .nav-link:hover,
+.theme-dark .site-nav .nav-link.active {
+  color: #0f1115;
+  background: #7db7ff;
+  text-decoration: none;
+}
+
+.theme-dark .theme-toggle-btn,
+.theme-dark .back-to-top-btn {
+  background-color: #7db7ff;
+  color: #0f1115;
+}
+
+.theme-dark .theme-toggle-btn:hover,
+.theme-dark .back-to-top-btn:hover {
+  background-color: #a8d0ff;
+}
+
 .theme-dark .form-row input,
 .theme-dark input,
 .theme-dark textarea {
@@ -296,7 +357,6 @@ html {
   box-shadow: 0 0 0 2px rgba(125, 183, 255, 0.25);
 }
 
-/* Buttons */
 .theme-dark .btn {
   background-color: #7db7ff;
   color: #0f1115;
@@ -309,7 +369,6 @@ html {
   color: #0f1115;
 }
 
-/* Clear button */
 .theme-dark .btn-secondary {
   background-color: #2a3245;
   color: #e9eef5;
@@ -337,4 +396,99 @@ html {
 
 .theme-dark .task-list {
   margin-top: 8px;
+}
+
+/* =========================================================
+   Light Theme
+   ========================================================= */
+
+.theme-light {
+  background: #f3f6fb;
+  color: #1a2230;
+}
+
+.theme-light .site-header,
+.theme-light .site-footer {
+  background: #e8eef7;
+  color: #1a2230;
+}
+
+.theme-light .site-header {
+  border-bottom: 1px solid rgba(26, 34, 48, 0.1);
+}
+
+.theme-light .site-footer {
+  border-top: 1px solid rgba(26, 34, 48, 0.1);
+}
+
+.theme-light .card {
+  background: #ffffff;
+  color: #1a2230;
+  border: 1px solid rgba(26, 34, 48, 0.08);
+  box-shadow: 0 8px 20px rgba(18, 31, 53, 0.08);
+}
+
+.theme-light .card p,
+.theme-light .card li {
+  color: #334155;
+}
+
+.theme-light .card-title,
+.theme-light .skills-group h3 {
+  color: #1d4f91;
+}
+
+.theme-light a {
+  color: #1d4f91;
+}
+
+.theme-light a:hover {
+  color: #143a6b;
+  text-decoration: underline;
+}
+
+.theme-light .site-nav .nav-link {
+  color: #334155;
+}
+
+.theme-light .site-nav .nav-link:hover,
+.theme-light .site-nav .nav-link.active {
+  background: #1d4f91;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.theme-light .theme-toggle-btn,
+.theme-light .back-to-top-btn {
+  background: #1d4f91;
+  color: #ffffff;
+}
+
+.theme-light .theme-toggle-btn:hover,
+.theme-light .back-to-top-btn:hover {
+  background: #143a6b;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .js-page .card {
+    flex: 1 1 100%;
+  }
+
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right {
+    text-align: left;
+  }
+
+  .card {
+    aspect-ratio: auto;
+    max-width: 100%;
+  }
 }
