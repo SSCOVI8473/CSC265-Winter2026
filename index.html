@@ -129,35 +129,24 @@
                             Projects
                         </h2>
                         <p class="section-intro">
-                            This section will highlight selected projects in a portfolio-style format.
-                            In the next step, it will be updated to pull project cards automatically
-                            from GitHub so the page can grow with minimal manual maintenance.
+                            This section is populated automatically from selected GitHub repositories.
+                            Repositories tagged with <strong>featured</strong> appear first, while
+                            repositories tagged with <strong>portfolio</strong> appear in the additional
+                            projects section below.
                         </p>
 
-                        <div class="project-preview-grid">
-                            <article class="project-preview-card">
-                                <h3>Featured Projects Area</h3>
-                                <p>
-                                    A dedicated space for the strongest and most polished work I want
-                                    to highlight first.
-                                </p>
-                            </article>
+                        <div class="projects-status" id="projectsStatus">
+                            Loading GitHub projects...
+                        </div>
 
-                            <article class="project-preview-card">
-                                <h3>Additional Portfolio Projects</h3>
-                                <p>
-                                    A second area for other selected repositories and technical work
-                                    that support the overall portfolio.
-                                </p>
-                            </article>
+                        <div class="projects-section" id="featuredProjectsSection">
+                            <h3 class="projects-subtitle">Featured Projects</h3>
+                            <div class="github-projects-grid" id="featuredProjects"></div>
+                        </div>
 
-                            <article class="project-preview-card">
-                                <h3>GitHub-Driven Content</h3>
-                                <p>
-                                    Planned GitHub API integration will allow project cards to be added
-                                    automatically as repositories are tagged for portfolio display.
-                                </p>
-                            </article>
+                        <div class="projects-section" id="portfolioProjectsSection">
+                            <h3 class="projects-subtitle">Additional Projects</h3>
+                            <div class="github-projects-grid" id="portfolioProjects"></div>
                         </div>
                     </section>
                 </div>
@@ -237,5 +226,7 @@
 
         <!-- Assignment 9.3: Custom jQuery code -->
         <script src="portfolio-jquery.js"></script>
+
+        <script src="portfolio-projects.js"></script>
     </body>
 </html>
